@@ -14,16 +14,16 @@ def clicked(*args):
     fail=False
     text1=entry_usr.get()
     text2=entry_pwd.get()
-    if choice== 1:
+    if choice_var== 1:
         facebook()
-    elif choice==2:    
+    elif choice_var==2:    
         twitter()
     else:
         print("Select app from given option and click Login button")
         fail=True
 
     if fail==True:
-        return None
+        return clicked()
     else:
         return None
 
