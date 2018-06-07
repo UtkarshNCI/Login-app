@@ -4,10 +4,13 @@ from getpass import getpass
 from time import sleep
 from selenium import webdriver
 
+
 text1=str   
 text2=str
 
 def clicked(*args):
+    choice_var=choice.get()
+    print(choice_var)
     fail=False
     text1=entry_usr.get()
     text2=entry_pwd.get()
@@ -20,7 +23,7 @@ def clicked(*args):
         fail=True
 
     if fail==True:
-        return clicked()
+        return None
     else:
         return None
 
@@ -60,7 +63,8 @@ root.configure(background="snow")
 label1=tkinter.Label(text="Enter details and select platform",fg="black",font=("TkMenuFont",10),bg="misty rose")
 label1.grid(column=0,row=0,rowspan=2)
 
-choice=tkinter.IntVar
+choice=tkinter.IntVar()
+choice.set(1)
 
 rad1 = tkinter.Radiobutton(root,text='Facebook', value=1,variable=choice)
 rad2 = tkinter.Radiobutton(root,text='Twitter', value=2,variable=choice)
