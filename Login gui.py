@@ -1,5 +1,5 @@
 #https://github.com/RandomQWE 
-#Gui Login app for facebook
+#Gui Login app for facebook,twitter,gmail
 #created by Utkarsh
 import tkinter 
 import os
