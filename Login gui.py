@@ -52,13 +52,36 @@ def facebook(usr,pwd):
 
 
     print("All Done")
-    input("if sucessfull input anything")
     driver.quit()
     print("Finished")
     
 
-def twitter():
-    print("Twitter")    
+def twitter(usr,pwd):
+    cwd=os.getcwd()
+    ok=os.path.join(cwd,'chromedriver.exe')
+    driver=webdriver.Chrome(ok)
+    driver.get("https://twitter.com/login?lang=en")
+    print("Opened Twitter")
+    sleep(1)
+
+    username=driver.find_element_by_class_name("js-username-field")
+    username.send_keys(usr)
+    print("Username entered")
+    sleep(1)
+
+    password=driver.find_element_by_class_name("js-password-field")
+    password.send_keys(pwd) 
+    print("Password entered")
+    sleep(1)
+
+    login_click=driver.find_element_by_class_name("EdgeButtom--medium")
+    login_click.click()
+
+
+    print("All Done")
+    driver.quit()
+    print("Finished")
+    
 
 
 
