@@ -108,7 +108,7 @@ def gmail(usr,pwd):
     print("Password entered")
     sleep(1)
 
-    login_click=driver.find_element_by_id("identiferNext")
+    login_click=driver.find_element_by_id("passwordNext")
     login_click.click()
 
 
