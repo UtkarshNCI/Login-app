@@ -1,9 +1,5 @@
 #https://github.com/RandomQWE 
-<<<<<<< HEAD
-#Gui Login app for facebook
-=======
-#Gui Login app for facebook,twitter,gmail
->>>>>>> ee6f763bdefea242532fc474e9baa2b9c64c4b04
+#Gui Login app for Facebook,Twitter,Gmail
 #created by Utkarsh
 import tkinter 
 import os
@@ -105,7 +101,7 @@ def gmail(usr,pwd):
 
     login_click=driver.find_element_by_id("next")
     login_click.click()
-    
+    sleep(1)
     
     password=driver.find_element_by_id('pass')
     password.send_keys(pwd) 
