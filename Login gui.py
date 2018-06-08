@@ -94,21 +94,21 @@ def gmail(usr,pwd):
     print("Opened Gmail")
     sleep(1)
 
-    username=driver.find_element_by_id('email')
+    username=driver.find_element_by_id('identifierId')
     username.send_keys(usr)
     print("Username entered")
     sleep(1)
 
-    login_click=driver.find_element_by_id("next")
+    login_click=driver.find_element_by_id("identifierNext")
     login_click.click()
     sleep(1)
     
-    password=driver.find_element_by_id('pass')
+    password=driver.find_element_by_name('password')
     password.send_keys(pwd) 
     print("Password entered")
     sleep(1)
 
-    login_click=driver.find_element_by_id("next")
+    login_click=driver.find_element_by_id("identiferNext")
     login_click.click()
 
 
