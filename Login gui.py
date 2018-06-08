@@ -1,3 +1,6 @@
+#https://github.com/RandomQWE 
+#Gui Login app for facebook
+#created by Utkarsh
 import tkinter 
 import os
 from getpass import getpass
@@ -16,6 +19,8 @@ def clicked(*args):
         facebook(text1,text2)
     elif choice_var==2:    
         twitter(text1,text2)
+    elif choice_var==3:
+        gmail(text1,text2)
     else:
         print("Select app from given option and click Login button")
         check_input()
@@ -81,6 +86,37 @@ def twitter(usr,pwd):
     driver.quit()
     print("Finished")
     
+def gmail(usr,pwd):
+    cwd=os.getcwd()
+    ok=os.path.join(cwd,'chromedriver.exe')
+    driver=webdriver.Chrome(ok)
+    driver.get("https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession")
+    print("Opened Gmail")
+    sleep(1)
+
+    username=driver.find_element_by_id('email')
+    username.send_keys(usr)
+    print("Username entered")
+    sleep(1)
+
+    login_click=driver.find_element_by_id("next")
+    login_click.click()
+    
+    
+    password=driver.find_element_by_id('pass')
+    password.send_keys(pwd) 
+    print("Password entered")
+    sleep(1)
+
+    login_click=driver.find_element_by_id("next")
+    login_click.click()
+
+
+    print("All Done")
+    driver.quit()
+    print("Finished")
+
+
 
 root=tkinter.Tk()
 root.title("Login App")
@@ -94,9 +130,10 @@ choice=tkinter.IntVar()
 
 rad1 = tkinter.Radiobutton(root,text='Facebook', value=1,variable=choice)
 rad2 = tkinter.Radiobutton(root,text='Twitter', value=2,variable=choice)
-
+rad3 = tkinter.Radiobutton(root,text='Gmail',value=3,variable=choice)
 rad1.grid(column=0, row=2)
 rad2.grid(column=1, row=2)
+rad3.grid(column=3,row=2)
 
  
 label_usr=tkinter.Label(text="Username",fg="Black",font=("TkMenuFont",10),bg="misty rose")
