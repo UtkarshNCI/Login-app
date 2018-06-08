@@ -7,29 +7,55 @@ from selenium import webdriver
 
 text1=str   
 text2=str
-
+fail=False
 def clicked(*args):
     choice_var=choice.get()
     print(choice_var)
-    fail=False
     text1=entry_usr.get()
     text2=entry_pwd.get()
     if choice_var== 1:
-        facebook()
+        facebook(text1,text2)
     elif choice_var==2:    
-        twitter()
+        twitter(text1,text2)
     else:
         print("Select app from given option and click Login button")
-        fail=True
+        check_input()
 
+
+def check_input():
     if fail==True:
         return clicked()
     else:
         return None
 
 
-def facebook():
-    print("Facebook")
+def facebook(usr,pwd):
+    cwd=os.getcwd()
+    ok=os.path.join(cwd,'chromedriver.exe')
+    driver=webdriver.Chrome(ok)
+    driver.get("https://www.facebook.com/")
+    print("Opened Facebook")
+    sleep(1)
+
+    username=driver.find_element_by_id('email')
+    username.send_keys(usr)
+    print("Username entered")
+    sleep(1)
+
+    password=driver.find_element_by_id('pass')
+    password.send_keys(pwd) 
+    print("Password entered")
+    sleep(1)
+
+    login_click=driver.find_element_by_id("loginbutton")
+    login_click.click()
+
+
+    print("All Done")
+    input("if sucessfull input anything")
+    driver.quit()
+    print("Finished")
+    
 
 def twitter():
     print("Twitter")    
@@ -64,7 +90,7 @@ label1=tkinter.Label(text="Enter details and select platform",fg="black",font=("
 label1.grid(column=0,row=0,rowspan=2)
 
 choice=tkinter.IntVar()
-choice.set(1)
+
 
 rad1 = tkinter.Radiobutton(root,text='Facebook', value=1,variable=choice)
 rad2 = tkinter.Radiobutton(root,text='Twitter', value=2,variable=choice)
