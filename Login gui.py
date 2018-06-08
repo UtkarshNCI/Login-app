@@ -10,7 +10,6 @@ text2=str
 fail=False
 def clicked(*args):
     choice_var=choice.get()
-    print(choice_var)
     text1=entry_usr.get()
     text2=entry_pwd.get()
     if choice_var== 1:
@@ -83,27 +82,6 @@ def twitter(usr,pwd):
     print("Finished")
     
 
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 root=tkinter.Tk()
 root.title("Login App")
 root.geometry("400x400")
@@ -114,11 +92,8 @@ label1.grid(column=0,row=0,rowspan=2)
 
 choice=tkinter.IntVar()
 
-
 rad1 = tkinter.Radiobutton(root,text='Facebook', value=1,variable=choice)
 rad2 = tkinter.Radiobutton(root,text='Twitter', value=2,variable=choice)
-
- 
 
 rad1.grid(column=0, row=2)
 rad2.grid(column=1, row=2)
@@ -140,9 +115,4 @@ button_log=tkinter.Button(text="Login",command=clicked)
 button_log.grid(column=1,row=5)
 
 root.bind("button_log","<Button-1>",clicked)
-
-
-
-
-
 root.mainloop()
