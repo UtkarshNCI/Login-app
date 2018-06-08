@@ -1,3 +1,6 @@
+#https://github.com/RandomQWE 
+#Gui Login app for facebook
+#created by Utkarsh
 import tkinter 
 import os
 from getpass import getpass
