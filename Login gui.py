@@ -1,5 +1,9 @@
 #https://github.com/RandomQWE 
+<<<<<<< HEAD
 #Gui Login app for facebook
+=======
+#Gui Login app for facebook,twitter,gmail
+>>>>>>> ee6f763bdefea242532fc474e9baa2b9c64c4b04
 #created by Utkarsh
 import tkinter 
 import os
